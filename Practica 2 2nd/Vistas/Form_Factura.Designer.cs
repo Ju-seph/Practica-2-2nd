@@ -253,7 +253,7 @@
             this.labelname.Name = "labelname";
             this.labelname.Size = new System.Drawing.Size(467, 37);
             this.labelname.TabIndex = 1;
-            this.labelname.Text = "ANGEL";
+            this.labelname.Text = "ANGEL LANDAZURI SAMANIEGO";
             this.labelname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel7
