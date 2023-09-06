@@ -1,4 +1,5 @@
-﻿using Practica_2_2nd.Vistas;
+﻿using Practica_2_2nd.Controladores;
+using Practica_2_2nd.Vistas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,9 @@ namespace Practica_2_2nd
 {
     public partial class Form_Principal : Form
     {
+       public static Ctl_cliente ctl_cliente = new Ctl_cliente();
+       public static Ctl_producto ctl_producto = new Ctl_producto();
+
         public Form_Principal()
         {
             InitializeComponent();
@@ -32,7 +36,8 @@ namespace Practica_2_2nd
 
         private void bfactura_Click(object sender, EventArgs e)
         {
-           
+            Form_Factura form_fa = new Form_Factura();
+            form_fa.Show();
         }
     }
 }

@@ -14,19 +14,20 @@ namespace Practica_2_2nd.Vistas
 {
     public partial class Form_Productos : Form
     {
-        Ctl_producto ctl_producto= new Ctl_producto();
+        
         public Form_Productos()
         {
             InitializeComponent();
             beditar.Enabled = false;
             beliminar.Enabled = false;
             update_codigo();
+            Form_Principal.ctl_producto.Mostrar_Tabla(tabla);
            
         }
 
         public void update_codigo()
         {
-            txtcodigo.Text = ctl_producto.Obtener_cod().ToString();
+            txtcodigo.Text = Form_Principal.ctl_producto.Obtener_cod().ToString();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -54,14 +55,14 @@ namespace Practica_2_2nd.Vistas
                 Stock = txtstock.Text,
             };
 
-            ctl_producto.Add_Lista(user);
+            Form_Principal.ctl_producto.Add_Lista(user);
 
             MessageBox.Show("USUARIO GUARDADO CORRECTAMENTE", "NOTIFICACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ctl_producto.Imp();
+            Form_Principal.ctl_producto.Imp();
 
             update_codigo();
             
-            ctl_producto.Mostrar_Tabla(tabla);
+            Form_Principal.ctl_producto.Mostrar_Tabla(tabla);
             Limpiar();
         }
 
@@ -81,7 +82,7 @@ namespace Practica_2_2nd.Vistas
             {
                 string cedula = tabla.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-                Producto user = ctl_producto.Buscar_x_Codigo(cedula);
+                Producto user = Form_Principal.ctl_producto.Buscar_x_Codigo(cedula);
 
                txtcodigo.Text = user.Cod;
                 txtnombre.Text = user.Nombre;
@@ -94,12 +95,12 @@ namespace Practica_2_2nd.Vistas
                 beliminar.Enabled = true;
             }
  
-            ctl_producto.Mostrar_Tabla(tabla);
+            Form_Principal.ctl_producto.Mostrar_Tabla(tabla);
         }
 
         private void beditar_Click(object sender, EventArgs e)
         {
-            int pos = ctl_producto.pos_x_codigo(txtcodigo.Text);
+            int pos = Form_Principal.ctl_producto.pos_x_codigo(txtcodigo.Text);
 
             Producto user = new Producto
             {
@@ -109,24 +110,24 @@ namespace Practica_2_2nd.Vistas
                 Stock=txtstock.Text,
             };
 
-            ctl_producto.Editar_Usuario(pos, user);
+            Form_Principal.ctl_producto.Editar_Usuario(pos, user);
             bagregar.Enabled = true;
             beditar.Enabled = false;
             beliminar.Enabled = false;
             Limpiar();
 
-            ctl_producto.Mostrar_Tabla(tabla);
+            Form_Principal.ctl_producto.Mostrar_Tabla(tabla);
         }
 
         private void beliminar_Click(object sender, EventArgs e)
         {
-            int pos = ctl_producto.pos_x_codigo(txtcodigo.Text);
+            int pos = Form_Principal.ctl_producto.pos_x_codigo(txtcodigo.Text);
             if (pos != -1)
             {
-                ctl_producto.Eliminar_usuario(pos);
+                Form_Principal.ctl_producto.Eliminar_usuario(pos);
                 Limpiar();
 
-                ctl_producto.Mostrar_Tabla(tabla);
+                Form_Principal.ctl_producto.Mostrar_Tabla(tabla);
 
                 beliminar.Enabled = false;
                 bagregar.Enabled = true;
@@ -137,8 +138,8 @@ namespace Practica_2_2nd.Vistas
                 MessageBox.Show("ERROR AL ELIMINAR", "NOTIFICACION", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            ctl_producto.Mostrar_Tabla(tabla);
-        }
+            Form_Principal.ctl_producto.Mostrar_Tabla(tabla);
+        }   
 
         private void txtcodigo_TextChanged(object sender, EventArgs e)
         {

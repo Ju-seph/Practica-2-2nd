@@ -16,10 +16,11 @@ namespace Practica_2_2nd.Vistas
     public partial class Form_Clientes : Form
     {
 
-        Ctl_cliente ctl_cliente= new Ctl_cliente();
+       
         public Form_Clientes()
         {
             InitializeComponent();
+            Form_Principal.ctl_cliente.Mostrar_Tabla(tabla);
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -34,7 +35,7 @@ namespace Practica_2_2nd.Vistas
 
         private void bagregar_Click(object sender, EventArgs e)
         {
-            int pos = ctl_cliente.pos_x_cedula(txtcedula.Text.Trim());
+            int pos = Form_Principal.ctl_cliente.pos_x_cedula(txtcedula.Text.Trim());
             if (pos ==-1)
             {
                 Cliente user = new Cliente
@@ -45,10 +46,10 @@ namespace Practica_2_2nd.Vistas
 
                 };
 
-                ctl_cliente.Add_lista(user);
+                Form_Principal.ctl_cliente.Add_lista(user);
 
                 MessageBox.Show("CLIENTE GUARDADO CORRECTAMENTE", "NOTIFICACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ctl_cliente.Imp();
+                Form_Principal.ctl_cliente.Imp();
             }
             else
             {
@@ -57,7 +58,7 @@ namespace Practica_2_2nd.Vistas
 
             
 
-            ctl_cliente.Mostrar_Tabla(tabla);
+            Form_Principal.ctl_cliente.Mostrar_Tabla(tabla);
             Limpiar();
 
         }
@@ -75,7 +76,7 @@ namespace Practica_2_2nd.Vistas
             {
                 string cedula = tabla.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-                Cliente user = ctl_cliente.Buscar_x_Cedula(cedula);
+                Cliente user = Form_Principal.ctl_cliente.Buscar_x_Cedula(cedula);
 
                 txtcedula.Text = user.Cedula;
                 txtnombre.Text = user.Nombre;
@@ -87,12 +88,12 @@ namespace Practica_2_2nd.Vistas
                 beliminar.Enabled = true;
             }
 
-            ctl_cliente.Mostrar_Tabla(tabla);
+            Form_Principal.ctl_cliente.Mostrar_Tabla(tabla);
         }
 
         private void beditar_Click(object sender, EventArgs e)
         {
-            int pos = ctl_cliente.pos_x_cedula(txtcedula.Text);
+            int pos = Form_Principal.ctl_cliente.pos_x_cedula(txtcedula.Text);
             if (pos !=-1)
             {
                 Cliente user = new Cliente
@@ -103,7 +104,7 @@ namespace Practica_2_2nd.Vistas
 
                 };
 
-                ctl_cliente.Editar_Usuario(pos, user);
+                Form_Principal.ctl_cliente.Editar_Usuario(pos, user);
                 MessageBox.Show("CLIENTE ACTUALIZADO CORRECTAMENTE", "NOTIFICACION");
             }
             else
@@ -112,20 +113,20 @@ namespace Practica_2_2nd.Vistas
             }
 
            Limpiar();
-            ctl_cliente.Mostrar_Tabla(tabla);
+            Form_Principal.ctl_cliente.Mostrar_Tabla(tabla);
 
             bagregar.Enabled=true;
         }
 
         private void beliminar_Click(object sender, EventArgs e)
         {
-            int pos = ctl_cliente.pos_x_cedula(txtcedula.Text);
+            int pos = Form_Principal.ctl_cliente.pos_x_cedula(txtcedula.Text);
             if (pos != -1)
             {
-                ctl_cliente.Eliminar_usuario(pos);
+                Form_Principal.ctl_cliente.Eliminar_usuario(pos);
                 Limpiar();
 
-                ctl_cliente.Mostrar_Tabla(tabla);
+                Form_Principal.ctl_cliente.Mostrar_Tabla(tabla);
 
                 beliminar.Enabled = false;
                 bagregar.Enabled = true;
@@ -136,7 +137,7 @@ namespace Practica_2_2nd.Vistas
                 MessageBox.Show("NO EXISTE EL CLIENTE A ELIMINAR", "NOTIFICACION", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            ctl_cliente.Mostrar_Tabla(tabla);
+            Form_Principal.ctl_cliente.Mostrar_Tabla(tabla);
            
         }
 

@@ -8,7 +8,7 @@ using Practica_2_2nd.Modelos;
 
 namespace Practica_2_2nd.Controladores
 {
-    class Ctl_producto
+    public class Ctl_producto
     {
         List<Producto> lista;
 
