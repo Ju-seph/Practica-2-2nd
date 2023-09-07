@@ -16,6 +16,7 @@ namespace Practica_2_2nd
     {
        public static Ctl_cliente ctl_cliente = new Ctl_cliente();
        public static Ctl_producto ctl_producto = new Ctl_producto();
+        public static Ctl_factura ctl_factura = new Ctl_factura();
 
         public Form_Principal()
         {

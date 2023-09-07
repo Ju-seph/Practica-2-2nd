@@ -39,13 +39,13 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.texcedula = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.labelname = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lanumero = new System.Windows.Forms.Label();
+            this.ladia = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
@@ -178,7 +178,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.texcedula, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -199,14 +199,15 @@
             this.label3.Text = "Buscar Cliente:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // texcedula
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(304, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(295, 20);
-            this.textBox1.TabIndex = 1;
+            this.texcedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.texcedula.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.texcedula.Location = new System.Drawing.Point(304, 3);
+            this.texcedula.Name = "texcedula";
+            this.texcedula.Size = new System.Drawing.Size(295, 20);
+            this.texcedula.TabIndex = 1;
+            this.texcedula.TextChanged += new System.EventHandler(this.texcedula_TextChanged);
             // 
             // tableLayoutPanel6
             // 
@@ -244,15 +245,15 @@
             this.labelname.Name = "labelname";
             this.labelname.Size = new System.Drawing.Size(468, 37);
             this.labelname.TabIndex = 1;
-            this.labelname.Text = "ANGEL LANDAZURI SAMANIEGO";
+            this.labelname.Text = "-";
             this.labelname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.label5, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.lanumero, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.ladia, 0, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(617, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -262,30 +263,30 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(174, 76);
             this.tableLayoutPanel7.TabIndex = 2;
             // 
-            // label2
+            // lanumero
             // 
-            this.label2.AutoSize = true;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 35);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "FACT N 1";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lanumero.AutoSize = true;
+            this.lanumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lanumero.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lanumero.Location = new System.Drawing.Point(3, 0);
+            this.lanumero.Name = "lanumero";
+            this.lanumero.Size = new System.Drawing.Size(168, 35);
+            this.lanumero.TabIndex = 0;
+            this.lanumero.Text = "FACT N #";
+            this.lanumero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lanumero.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label5
+            // ladia
             // 
-            this.label5.AutoSize = true;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(3, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 41);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "dd/mm/yy";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ladia.AutoSize = true;
+            this.ladia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ladia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ladia.Location = new System.Drawing.Point(3, 35);
+            this.ladia.Name = "ladia";
+            this.ladia.Size = new System.Drawing.Size(168, 41);
+            this.ladia.TabIndex = 1;
+            this.ladia.Text = "dd/mm/yy";
+            this.ladia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel4
             // 
@@ -559,13 +560,13 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox texcedula;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelname;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lanumero;
+        private System.Windows.Forms.Label ladia;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Label label1;

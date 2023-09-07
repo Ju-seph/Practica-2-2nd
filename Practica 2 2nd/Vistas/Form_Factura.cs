@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Practica_2_2nd.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,10 @@ namespace Practica_2_2nd.Vistas
         public Form_Factura()
         {
             InitializeComponent();
+
+            lanumero.Text= "Fact N # " + Form_Principal.ctl_factura.num_factura();
+
+            ladia.Text= DateTime.Now.ToString();
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -35,6 +40,23 @@ namespace Practica_2_2nd.Vistas
         private void tableLayoutPanel9_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void texcedula_TextChanged(object sender, EventArgs e)
+        {
+            if (texcedula.Text.Length == 10)
+            {
+                Cliente cli= Form_Principal.ctl_cliente.Buscar_x_Cedula(texcedula.Text);
+
+                if (cli!= null)
+                {
+                    labelname.Text = cli.Nombre + " " + cli.Apellido;
+                }
+                else
+                {
+                    labelname.Text = "---";
+                }
+            }
         }
     }
 }
