@@ -31,5 +31,10 @@ namespace Practica_2_2nd.Vistas
         {
 
         }
+
+        private void tableLayoutPanel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
